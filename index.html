@@ -935,7 +935,7 @@ function recalcStreak(){
     const rec = state.dailyRecords[k];
     if(!rec){ break; } // no record = stop
     const p = rec.pct||0;
-    if(p>=85){ s++; lowCount=0; }
+    if(p>=70){ s++; lowCount=0; }
     else {
       lowCount++;
       if(lowCount>=2){ break; } // two consecutive <85 = reset
@@ -1111,7 +1111,7 @@ function updateScoreUI(pct){
   document.getElementById('score-pct').textContent=pct;
   const fill=document.getElementById('score-fill');
   fill.style.width=pct+'%';
-  fill.style.background=pct>=85?'var(--green)':pct>=50?'var(--orange)':'var(--red)';
+  fill.style.background=pct>=70?'var(--green)':pct>=50?'var(--orange)':'var(--red)';
 }
 
 function toggleHabit(hid){
